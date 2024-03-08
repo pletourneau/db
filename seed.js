@@ -1,6 +1,6 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
-const User = require("models/User"); // Update the path as per your project structure
+const User = require("./models/User"); // Update the path as per your project structure
 
 const seedAdmin = async () => {
   // Connect to MongoDB
