@@ -10,13 +10,12 @@ app.use(express.json());
 
 // MongoDB connection with Mongoose
 mongoose
-  .connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(process.env.MONGODB_URI)
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log(err));
 
+const cors = require("cors");
+app.use(cors());
 app.use("/api/users", userRoutes);
 app.use("/api/bets", betRoutes);
 
