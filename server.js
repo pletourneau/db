@@ -1,12 +1,12 @@
-require("dotenv").config(); // to use environment variables from .env file
+require("dotenv").config();
 const express = require("express");
-const mongoose = require("mongoose"); // Import mongoose
-const User = require("./User"); // Import your User model
+const mongoose = require("mongoose");
+const User = require("./models/User");
 const userRoutes = require("./routes/users");
 const betRoutes = require("./routes/bets");
 
 const app = express();
-app.use(express.json()); // Middleware to parse JSON bodies
+app.use(express.json());
 
 // MongoDB connection with Mongoose
 mongoose
