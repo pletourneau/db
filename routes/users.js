@@ -2,9 +2,13 @@
 
 const express = require("express");
 const router = express.Router();
-const { addUser, addCoinsToUser } = require("../controllers/userController");
+const {
+  addUser,
+  addCoinsToUser,
+  addOrSubtractCoins,
+} = require("../controllers/userController");
 
 router.post("/add", addUser);
-router.put("/coins/add", addCoinsToUser);
+router.put("/coins/add", addOrSubtractCoins);
 
 module.exports = router;
